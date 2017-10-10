@@ -8,7 +8,8 @@ node {
    stage('Plan') {
    
      withCredentials([usernamePassword(credentialsId: 'aws-keys', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-        sh """          
+        sh """
+          terraform init        
           terraform plan -out plan.plan
         """
       }
