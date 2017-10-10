@@ -20,4 +20,4 @@ git clone https://github.com/experiencedevops/finalscript.git
 
 #Docker Compose run
 cd finalscript
-docker-compose up
+docker-compose up -d
