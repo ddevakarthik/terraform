@@ -19,5 +19,5 @@ apt-get install git
 git clone https://github.com/ddevakarthik/reactscript.git
 
 #Docker Compose run
-cd finalscript
+cd reactscript
 docker-compose up -d
