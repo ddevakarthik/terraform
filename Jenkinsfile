@@ -8,8 +8,7 @@ node {
    stage('Plan') {
    
      withCredentials([usernamePassword(credentialsId: 'aws-keys', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-        sh """
-          terraform remote config -backend=S3 -backend-config="bucket=devakarthik-ed-state" -backend-config="key=state.tfstate" -backend-config="region=us-east-1"
+        sh """          
           terraform plan -out plan.plan
         """
       }
@@ -18,8 +17,7 @@ node {
    
    stage('Apply') {
      withCredentials([usernamePassword(credentialsId: 'aws-keys', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-        sh """
-          terraform remote config -backend=S3 -backend-config="bucket=devakarthik-ed-state" -backend-config="key=state.tfstate" -backend-config="region=us-east-1" 
+        sh """          
           terraform apply plan.plan
         """
       } 
