@@ -16,7 +16,7 @@ pip install docker-compose
 apt-get install git
 
 #Clone the repository
-git clone https://github.com/experiencedevops/finalscript.git
+git clone https://github.com/ddevakarthik/reactscript.git
 
 #Docker Compose run
 cd finalscript
